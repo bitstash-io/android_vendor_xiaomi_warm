@@ -10,6 +10,7 @@ raiserecoverysigabrt=FALSE
 nodeResponseTime=200
 sessionResponseTimePadding=300
 sessionMaxFlushWaitTime=1000
+sessionFallbackWaitTime = 300
 maxHalRequests=8
 numberOfCHIThreads=7
 
