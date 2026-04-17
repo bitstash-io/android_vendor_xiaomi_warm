@@ -952,6 +952,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.1-impl-qti \
     android.hardware.gnss-aidl-impl-qti \
+    audio.bluetooth_qti.default \
     audio.primary.pitti \
     camera.qcom \
     com.qti.chi.override \
