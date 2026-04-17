@@ -7,6 +7,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/odm/etc/camera/cameraopt.json:$(TARGET_COPY_OUT_ODM)/etc/camera/cameraopt.json \
+    vendor/xiaomi/warm/proprietary/odm/etc/camera/cameraopt_perf.json:$(TARGET_COPY_OUT_ODM)/etc/camera/cameraopt_perf.json \
+    vendor/xiaomi/warm/proprietary/odm/etc/camera/cameraopt_reclaim.json:$(TARGET_COPY_OUT_ODM)/etc/camera/cameraopt_reclaim.json \
     vendor/xiaomi/warm/proprietary/odm/etc/df_default.xml:$(TARGET_COPY_OUT_ODM)/etc/df_default.xml \
     vendor/xiaomi/warm/proprietary/odm/etc/disp0/mdss_dsi_panel_c3f2_35_02_0d_hd_video/cct_pcc.txt:$(TARGET_COPY_OUT_ODM)/etc/disp0/mdss_dsi_panel_c3f2_35_02_0d_hd_video/cct_pcc.txt \
     vendor/xiaomi/warm/proprietary/odm/etc/disp0/mdss_dsi_panel_c3f2_35_02_0d_hd_video/clstc/ClstcLut0.txt:$(TARGET_COPY_OUT_ODM)/etc/disp0/mdss_dsi_panel_c3f2_35_02_0d_hd_video/clstc/ClstcLut0.txt \
@@ -187,6 +189,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/product/etc/permissions/UimService.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimService.xml \
     vendor/xiaomi/warm/proprietary/product/etc/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
     vendor/xiaomi/warm/proprietary/system/etc/sysconfig/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
+    vendor/xiaomi/warm/proprietary/system_ext/etc/init/qspa_system.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/qspa_system.rc \
     vendor/xiaomi/warm/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
     vendor/xiaomi/warm/proprietary/system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml \
     vendor/xiaomi/warm/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
@@ -194,6 +197,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml \
     vendor/xiaomi/warm/proprietary/system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.ims.rcsservice.xml \
     vendor/xiaomi/warm/proprietary/system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml \
+    vendor/xiaomi/warm/proprietary/system_ext/etc/qspa/qspa_default.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/qspa/qspa_default.rc \
     vendor/xiaomi/warm/proprietary/system_ext/etc/seccomp_policy/wfdservice64.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice64.policy \
     vendor/xiaomi/warm/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/xiaomi/warm/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
@@ -295,6 +299,13 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/157_Native.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/157_Native.png \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/158_BWClassical.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/158_BWClassical.png \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/159_Flowers.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/159_Flowers.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/160_Vivid_1.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/160_Vivid_1.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/161_Monsoon.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/161_Monsoon.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/162_Nature.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/162_Nature.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/163_Relaxation.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/163_Relaxation.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/164_Kyoto.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/164_Kyoto.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/165_Oldalley.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/165_Oldalley.png \
+    vendor/xiaomi/warm/proprietary/vendor/etc/camera/166_Reverse.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/166_Reverse.png \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/anc_night_algo_cache:$(TARGET_COPY_OUT_VENDOR)/etc/camera/anc_night_algo_cache \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/anc_night_binary_cache:$(TARGET_COPY_OUT_VENDOR)/etc/camera/anc_night_binary_cache \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/anc_night_model:$(TARGET_COPY_OUT_VENDOR)/etc/camera/anc_night_model \
@@ -1665,6 +1676,7 @@ PRODUCT_PACKAGES += \
     libwfduibcsrc \
     libwfduibcsrcinterface \
     vendor.qti.ImsRtpService-V1-ndk \
+    vendor.qti.ImsRtpService-V2-ndk \
     vendor.qti.diaghal@1.0 \
     vendor.qti.hardware.seccam@1.0 \
     vendor.qti.hardware.wifidisplaysession@1.0 \
@@ -1672,7 +1684,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
     vendor.qti.qesdhalaidl-V2-ndk \
-    vendor.xiaomi.hardware.display.mihwcextension-V1-ndk \
+    vendor.xiaomi.hardware.display.mihwcextension-V2-ndk \
     displayfeature.default \
     libMiDispDevManager \
     libadaptivehdr \
@@ -1708,8 +1720,7 @@ PRODUCT_PACKAGES += \
     HotwordEnrollmentXGoogleHEXAGON_WIDEBAND \
     HotwordEnrollmentYGoogleHEXAGON_WIDEBAND \
     AtFwd2 \
-    ImsRcsService \
-    QesdkSysService \
+    FrameworksUtilsSysService \
     QtiTelephonyService \
     QtiTelephony \
     WfdService \
