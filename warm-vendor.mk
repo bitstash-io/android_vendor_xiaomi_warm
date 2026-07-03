@@ -1434,7 +1434,6 @@ PRODUCT_PACKAGES += \
     libvideotxr \
     libvideoutils \
     libvmfilexfer \
-    libvmmem \
     libvui_intf \
     libwfdcodecv4l2_proprietary \
     libwfdcommonutils_proprietary \
