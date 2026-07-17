@@ -247,6 +247,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/vendor/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     vendor/xiaomi/warm/proprietary/vendor/etc/audio/sku_pitti/mixer_paths_pitti_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/mixer_paths_pitti_qrd.xml \
     vendor/xiaomi/warm/proprietary/vendor/etc/audio/sku_pitti/resourcemanager_pitti_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pitti/resourcemanager_pitti_qrd.xml \
+    vendor/xiaomi/warm/proprietary/vendor/etc/backend_conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/backend_conf.xml \
     vendor/xiaomi/warm/proprietary/vendor/etc/batching.conf:$(TARGET_COPY_OUT_VENDOR)/etc/batching.conf \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/102_SummerDay.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/102_SummerDay.png \
     vendor/xiaomi/warm/proprietary/vendor/etc/camera/103_Fantasy.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/103_Fantasy.png \
@@ -671,6 +672,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/wfdvndservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wfdvndservice.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+    vendor/xiaomi/warm/proprietary/vendor/etc/kvh2xml.xml:$(TARGET_COPY_OUT_VENDOR)/etc/kvh2xml.xml \
     vendor/xiaomi/warm/proprietary/vendor/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     vendor/xiaomi/warm/proprietary/vendor/etc/media_codecs_performance_pitti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_pitti.xml \
     vendor/xiaomi/warm/proprietary/vendor/etc/media_codecs_pitti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_pitti.xml \
@@ -1017,12 +1019,14 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.1-impl-qti \
     android.hardware.gnss-aidl-impl-qti \
+    audio.primary.pitti \
     camera.qcom \
     com.qti.chi.override \
     fingerprint.goodix.default \
     gralloc.default \
     libEseUtils \
     libqtigatekeeper \
+    sound_trigger.primary.pitti \
     vendor.qti.hardware.alarm-impl \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
     vendor.qti.hardware.bluetooth_audio@2.1-impl \
@@ -1076,13 +1080,22 @@ PRODUCT_PACKAGES += \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
+    libagm \
+    libagmmixer \
     libaidenoiser \
     libaidenoiserv2 \
     libanc_night \
     libanc_single_bokeh \
     libanc_single_bokeh_rear \
     libanc_single_rt_bokeh \
+    libar-acdb \
+    libar-gpr \
+    libar-gsl \
+    libar-pal \
+    libarmemlog \
+    libats \
     libaudio_log_utils \
+    libaudiofeaturestats \
     libbacklight-calib \
     libbase64 \
     libbatching \
@@ -1217,6 +1230,8 @@ PRODUCT_PACKAGES += \
     liblowi_common \
     liblowi_wifihal \
     liblqe \
+    liblx-ar_util \
+    liblx-osal \
     libmapdata_api \
     libmasc \
     libmcs \
@@ -1266,6 +1281,7 @@ PRODUCT_PACKAGES += \
     libops \
     libos \
     libpal_net_if \
+    libpalclient \
     libpdmapper \
     libpdnotifier \
     libperfconfig \
@@ -1421,6 +1437,7 @@ PRODUCT_PACKAGES += \
     libvideoutils \
     libvmfilexfer \
     libvmmem \
+    libvui_intf \
     libwfdcodecv4l2_proprietary \
     libwfdcommonutils_proprietary \
     libwfdconfigutils_proprietary \
@@ -1498,6 +1515,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.diaghal@1.0_vendor \
     vendor.qti.gnss-V6-ndk \
     vendor.qti.gnss-service \
+    vendor.qti.hardware.AGMIPC@1.0-impl \
+    vendor.qti.hardware.ListenSoundModel@1.0-impl \
+    vendor.qti.hardware.ListenSoundModel@1.0 \
     vendor.qti.hardware.alarm-V1-ndk \
     vendor.qti.hardware.bluetooth_sar@1.0 \
     vendor.qti.hardware.bluetooth_sar@1.1 \
@@ -1531,6 +1551,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.mwqemadapter@1.0 \
     vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk \
+    vendor.qti.hardware.pal@1.0-impl \
     vendor.qti.hardware.perf2-V1-ndk \
     vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.hardware.qccsyshal@1.1 \
