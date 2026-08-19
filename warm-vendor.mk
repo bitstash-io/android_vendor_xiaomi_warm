@@ -1876,7 +1876,6 @@ PRODUCT_PACKAGES += \
     qrtr-cfg \
     qrtr-lookup \
     qrtr-ns \
-    qseecom_sample_client \
     qseecomd \
     qti \
     qwesd \
