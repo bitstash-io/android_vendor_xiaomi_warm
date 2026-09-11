@@ -28737,50 +28737,66 @@ cc_prebuilt_binary {
 }
 
 sh_binary {
-    name: "init.crda",
+    name: "init.class_main",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.crda.sh",
-    filename: "init.crda.sh",
+    src: "proprietary/vendor/bin/init.class_main.sh",
+    filename: "init.class_main.sh",
     soc_specific: true,
 }
 
 sh_binary {
-    name: "init.mdm",
+    name: "init.kernel.post_boot-pitti",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.mdm.sh",
-    filename: "init.mdm.sh",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pitti.sh",
+    filename: "init.kernel.post_boot-pitti.sh",
     soc_specific: true,
 }
 
 sh_binary {
-    name: "init.qcom.class_core",
+    name: "init.kernel.post_boot-pitti_4_0",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qcom.class_core.sh",
-    filename: "init.qcom.class_core.sh",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pitti_4_0.sh",
+    filename: "init.kernel.post_boot-pitti_4_0.sh",
     soc_specific: true,
 }
 
 sh_binary {
-    name: "init.qcom.coex",
+    name: "init.kernel.post_boot-pitti_4_1",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qcom.coex.sh",
-    filename: "init.qcom.coex.sh",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pitti_4_1.sh",
+    filename: "init.kernel.post_boot-pitti_4_1.sh",
     soc_specific: true,
 }
 
 sh_binary {
-    name: "init.qcom.efs.sync",
+    name: "init.kernel.post_boot-pitti_default_6_2",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qcom.efs.sync.sh",
-    filename: "init.qcom.efs.sync.sh",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pitti_default_6_2.sh",
+    filename: "init.kernel.post_boot-pitti_default_6_2.sh",
     soc_specific: true,
 }
 
 sh_binary {
-    name: "init.qcom.sdio",
+    name: "init.kernel.post_boot",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qcom.sdio.sh",
-    filename: "init.qcom.sdio.sh",
+    src: "proprietary/vendor/bin/init.kernel.post_boot.sh",
+    filename: "init.kernel.post_boot.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.early_boot",
+    owner: "xiaomi",
+    src: "proprietary/vendor/bin/init.qcom.early_boot.sh",
+    filename: "init.qcom.early_boot.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.qcom.post_boot",
+    owner: "xiaomi",
+    src: "proprietary/vendor/bin/init.qcom.post_boot.sh",
+    filename: "init.qcom.post_boot.sh",
     soc_specific: true,
 }
 
@@ -28793,42 +28809,10 @@ sh_binary {
 }
 
 sh_binary {
-    name: "init.qti.cplicense",
+    name: "init.qcom",
     owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qti.cplicense.sh",
-    filename: "init.qti.cplicense.sh",
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "init.qti.kernel.debug-pitti",
-    owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qti.kernel.debug-pitti.sh",
-    filename: "init.qti.kernel.debug-pitti.sh",
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "init.qti.kernel.debug",
-    owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qti.kernel.debug.sh",
-    filename: "init.qti.kernel.debug.sh",
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "init.qti.kernel.early_debug-pitti",
-    owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qti.kernel.early_debug-pitti.sh",
-    filename: "init.qti.kernel.early_debug-pitti.sh",
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "init.qti.kernel.early_debug",
-    owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qti.kernel.early_debug.sh",
-    filename: "init.qti.kernel.early_debug.sh",
+    src: "proprietary/vendor/bin/init.qcom.sh",
+    filename: "init.qcom.sh",
     soc_specific: true,
 }
 
@@ -29243,14 +29227,6 @@ cc_prebuilt_binary {
         none: true,
     },
     prefer: true,
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "qca6234-service",
-    owner: "xiaomi",
-    src: "proprietary/vendor/bin/qca6234-service.sh",
-    filename: "qca6234-service.sh",
     soc_specific: true,
 }
 

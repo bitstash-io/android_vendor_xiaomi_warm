@@ -1,9 +1,9 @@
 #=============================================================================
-# Copyright (c) 2022 Qualcomm Technologies, Inc.
+# Copyright (c) 2019-2024 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 #
-# Copyright (c) 2014-2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2009-2012, 2014-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -30,16 +30,80 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #=============================================================================
 
+#Implementing this mechanism to jump to powersave governor if the script is not running
+#as it would be an indication for devs for debug purposes.
+
+function configure_vm_parameters() {
+	# Set Memory parameters.
+
+	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+	MemTotal=${MemTotalStr:16:8}
+	let RamSizeGB="( $MemTotal / 1048576 ) + 1"
+
+	# Set the min_free_kbytes and watermark_scale_factor value
+	if [ $RamSizeGB -ge 12 ]; then
+		# 12GB, 16GB
+		MinFreeKbytes=11584
+		WatermarkScale=30
+	elif [ $RamSizeGB -ge 8 ]; then
+		# 8GB
+		MinFreeKbytes=11584
+		WatermarkScale=40
+	elif [ $RamSizeGB -ge 4 ]; then
+		# 4GB, 6GB
+		MinFreeKbytes=7572
+		WatermarkScale=30
+	elif [ $RamSizeGB -ge 2 ]; then
+		# 2GB, 3GB
+		MinFreeKbytes=5792
+		WatermarkScale=50
+	else
+		# 1GB
+		MinFreeKbytes=4096
+		WatermarkScale=60
+	fi
+
+	echo $MinFreeKbytes  > /proc/sys/vm/min_free_kbytes
+	echo $WatermarkScale > /proc/sys/vm/watermark_scale_factor
+
+}
+
+configure_vm_parameters
+
+fallback_setting()
+{
+	governor="powersave"
+	for i in `ls -d /sys/devices/system/cpu/cpufreq/policy[0-9]*`
+	do
+		if [ -f $i/scaling_governor ] ; then
+			echo $governor > $i/scaling_governor
+		fi
+	done
+}
+
+
 if [ -f /sys/devices/soc0/soc_id ]; then
 	platformid=`cat /sys/devices/soc0/soc_id`
 fi
 
 case "$platformid" in
-    "623")
-		/vendor/bin/sh /vendor/bin/init.qti.kernel.early_debug-pitti.sh
+	"623")
+		#Pass as an argument the max number of clusters supported on the SOC
+		/vendor/bin/sh /vendor/bin/init.kernel.post_boot-pitti.sh 2
 		;;
-
 	*)
-		echo "***WARNING***: Invalid SoC ID\n\t Not running early debug scripts!!\n"
+		echo "***WARNING***: Invalid SoC ID\n\t No postboot settings applied!!\n"
+		fallback_setting
 		;;
 esac
+
+# set rq_affinity to 2 on ufs devices
+for sd in /sys/block/sd*/queue/rq_affinity
+do
+	echo 2 > $sd
+done
+
+sleep 600
+echo 6144 > /proc/sys/vm/min_free_kbytes
+echo 10 > /proc/sys/vm/watermark_scale_factor
+

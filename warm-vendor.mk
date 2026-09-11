@@ -621,9 +621,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/dataadpl.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dataadpl.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/dataqti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dataqti.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/dpmQmiMgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dpmQmiMgr.rc \
-    vendor/xiaomi/warm/proprietary/vendor/etc/init/hw/init.qcom.factory.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.factory.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/hw/init.qti.kernel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qti.kernel.rc \
-    vendor/xiaomi/warm/proprietary/vendor/etc/init/hw/init.qti.ufs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qti.ufs.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/ims-dataservice-daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims-dataservice-daemon.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/ims_rtp_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims_rtp_daemon.rc \
     vendor/xiaomi/warm/proprietary/vendor/etc/init/imsdaemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/imsdaemon.rc \
@@ -1849,18 +1847,16 @@ PRODUCT_PACKAGES += \
     ims-dataservice-daemon \
     ims_rtp_daemon \
     imsdaemon \
-    init.crda \
-    init.mdm \
-    init.qcom.class_core \
-    init.qcom.coex \
-    init.qcom.efs.sync \
-    init.qcom.sdio \
+    init.class_main \
+    init.kernel.post_boot-pitti \
+    init.kernel.post_boot-pitti_4_0 \
+    init.kernel.post_boot-pitti_4_1 \
+    init.kernel.post_boot-pitti_default_6_2 \
+    init.kernel.post_boot \
+    init.qcom.early_boot \
+    init.qcom.post_boot \
     init.qcom.sensors \
-    init.qti.cplicense \
-    init.qti.kernel.debug-pitti \
-    init.qti.kernel.debug \
-    init.qti.kernel.early_debug-pitti \
-    init.qti.kernel.early_debug \
+    init.qcom \
     init.qti.kernel \
     init.qti.media \
     init.qti.qcv \
@@ -1878,7 +1874,6 @@ PRODUCT_PACKAGES += \
     port-bridge \
     power_off_alarm \
     ppd \
-    qca6234-service \
     qcc-vendor \
     qconfigfunctest \
     qdcmss \
